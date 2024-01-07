@@ -3,5 +3,9 @@ main {
     flex-direction: column;
     margin-top: 2%;
     align-items: center;
-    height: 100vh;
+}
+
+.priceTotal {
+    position: fixed;
+    bottom: 60px;
 }

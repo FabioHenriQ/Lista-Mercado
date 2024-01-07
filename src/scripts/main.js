@@ -1,11 +1,12 @@
 let itemList = [];
-let total; 
+let total;
 const buttonSend = document.querySelector("#buttonSend");
+const totalBox = document.querySelector(".total");
 const inputPrice = document.querySelector("#price");
 const inputItem = document.querySelector("#item");
 const ulItems = document.querySelector(".list");
 
-buttonSend.addEventListener('click', addItemList)
+buttonSend.addEventListener('click', addItemList);
 
 function addItemList() {
     if(inputItem.value && inputPrice.value) {
@@ -13,10 +14,10 @@ function addItemList() {
             name: inputItem.value,
             price: parseFloat(inputPrice.value).toFixed(2).replace('.',',')
         });
+        total = 0;
 
         inputItem.value = '';
         inputPrice.value = '';
-        total = 0;
 
         ulItems.innerHTML = ""
         itemList.map((item)=>{
@@ -27,6 +28,7 @@ function addItemList() {
                                 </li>`
 
         })
+        totalBox.innerHTML = parseFloat(total).toFixed(2).replace('.',',');
 
     } else if (inputItem.value && inputPrice.value == '') {
         alert('insira um valor no preço');
@@ -39,6 +41,7 @@ function addItemList() {
 
 function clearList() {
     total = 0;
+    totalBox.innerHTML = '0,00';
     inputItem.value = '';
     inputPrice.value = '';
     itemList = [];
