@@ -1,11 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;500&display=swap');
+
+body {
+    background-color: #ccc;
+    font-family: 'Roboto', sans-serif;
+}
 main {
     display: flex;
     flex-direction: column;
     margin-top: 2%;
+    margin-left: 3%;
+    margin-right: 3%;
+    margin-bottom: 10%;
     align-items: center;
 }
-
+.containerInput {
+    display: flex;
+    justify-content: center;
+    gap: .5%;
+}
+.containerInput input {
+    font-size: 1.1rem;
+    padding: 2px;
+    border: 0;
+    border-radius: 3px;
+}
+.containerInput button {
+    font-size: 1rem;
+    padding: 3px;
+    border: 1px solid;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: .5s;
+}
+.clear:hover {
+    background-color: #ff00007c;
+}
+.add:hover {
+    background-color: #33ff007c;
+}
 .priceTotal {
+    font-weight: 400;
     position: fixed;
     bottom: 60px;
+    padding: 10px;
+    font-size: 2rem;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 12px );
+    -webkit-backdrop-filter: blur( 12px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.containerList {
+    border: 1px solid #00000059;
+    border-radius: 5px;
+    margin-top: 1rem;
+    background-color: #fff;
+}
+.TextList{
+    font-size: 1.5rem;
+    padding: .5%;
+}
+.item {
+    gap: .2%;
+    width: 100%;
+    font-weight: 300;
+    display: flex;
+    justify-content: space-between;
+    padding: 3px;
+    align-items: center;
+    border-top: 1px solid #00000059;
+    border-bottom: 1px solid #00000059;
+}
+.itemList {
+    text-wrap: wrap;
+}
+.priceList {
+    display: flex;
+    text-align: right;
+    font-weight: 600;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: rgb(114, 248, 114);
+}
+.fail {
+    background-color: #ff040471;
+    transition: .2s;
 }

@@ -12,7 +12,7 @@ function addItemList() {
     if(inputItem.value && inputPrice.value) {
         itemList.push({
             name: inputItem.value,
-            price: parseFloat(inputPrice.value).toFixed(2).replace('.',',')
+            price: parseFloat(inputPrice.value).toFixed(2)
         });
         total = 0;
 
@@ -24,18 +24,29 @@ function addItemList() {
             total += parseFloat(item.price);
             ulItems.innerHTML += `<li class="item">
                                     <p class="itemList">${item.name}</p>
-                                    <p class="priceList">R$${item.price}</p>
+                                    <p class="priceList">R$${item.price.replace('.',',')}</p>
                                 </li>`
 
         })
         totalBox.innerHTML = parseFloat(total).toFixed(2).replace('.',',');
 
     } else if (inputItem.value && inputPrice.value == '') {
-        alert('insira um valor no preço');
+        inputPrice.classList.add('fail');
+        setTimeout(()=>{
+            inputPrice.classList.remove('fail')
+        },500)
     } else if (inputPrice.value && inputItem.value == '') {
-        alert('insira um item');
+        inputItem.classList.add('fail');
+        setTimeout(()=>{
+            inputItem.classList.remove('fail')
+        },500)
     } else {
-        alert('insira um item e um valor');
+        inputItem.classList.add('fail');
+        inputPrice.classList.add('fail');
+        setTimeout(()=>{
+            inputItem.classList.remove('fail')
+            inputPrice.classList.remove('fail')
+        },500)
     }
 }
 

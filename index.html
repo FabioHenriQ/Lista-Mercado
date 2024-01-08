@@ -7,6 +7,7 @@
 
     <link rel="stylesheet" href="./src/styles/main.css">
     <link rel="stylesheet" href="./src/styles/reset.css">
+    <link rel="stylesheet" href="./src/styles/responsive.css">
 
     <link rel="shortcut icon" href="" type="image/x-icon">
 
@@ -15,20 +16,20 @@
 </head>
 <body>
     <main>
-        <p class="priceTotal">R$<span class="total">0,00</span></p>
+        <p class="priceTotal">Total: R$<span class="total">0,00</span></p>
         <h1>Lista de Supermercado</h1>
         <section>
-            <div>
+            <div class="containerInput">
                 <input id="item" type="text" placeholder="Ex: Feijão">
                 <input id="price" type="number" placeholder="Ex: 20">
-                <button id="buttonSend" >Adicionar</button>
-                <button onclick="clearList()">Apagar</button>
+                <button class="add" id="buttonSend" >Adicionar</button>
+                <button class="clear" onclick="clearList()">Apagar</button>
             </div>
-            <div>
-                <p>Itens na lista:</p>
+            <div class="containerList">
+                <p class="TextList">Itens na lista:</p>
                 <ul class="list">
                     <li class="item">
-                        <p class="itemList">Feijão</p>
+                        <p class="itemList">Adicione um item!</p>
                         <p class="priceList">R$20,00</p>
                     </li>
                 </ul>
