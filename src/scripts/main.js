@@ -9,7 +9,7 @@ const ulItems = document.querySelector(".list");
 buttonSend.addEventListener('click', addItemList);
 
 function addItemList() {
-    if(inputItem.value && inputPrice.value) {
+    if(inputItem.value && inputPrice.value && inputPrice.value >= 0 ) {
         itemList.push({
             name: inputItem.value,
             price: parseFloat(inputPrice.value).toFixed(2)
@@ -30,7 +30,7 @@ function addItemList() {
         })
         totalBox.innerHTML = parseFloat(total).toFixed(2).replace('.',',');
 
-    } else if (inputItem.value && inputPrice.value == '') {
+    } else if (inputItem.value && inputPrice.value == '' || inputItem.value && inputPrice.value < 0) {
         inputPrice.classList.add('fail');
         setTimeout(()=>{
             inputPrice.classList.remove('fail')

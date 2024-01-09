@@ -41,7 +41,7 @@ main {
 .priceTotal {
     font-weight: 400;
     position: fixed;
-    bottom: 60px;
+    bottom: 30px;
     padding: 10px;
     font-size: 2rem;
     background: rgba( 255, 255, 255, 0.25 );
